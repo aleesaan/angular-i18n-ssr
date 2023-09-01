@@ -1,0 +1,8 @@
+<div style="text-align: center;">
+  <p i18n style="margin-bottom: 20px;">Localized using i18n</p>
+  <p style="margin-bottom: 20px;">{{ localizedString }}</p>
+  <button type="button" (click)="languageService.use(locale === 'fr' ? 'en' : 'fr')">
+    <ng-container *ngIf="locale === 'fr'; else french" i18n>Switch to English</ng-container>
+    <ng-template #french i18n>Switch to French</ng-template>
+  </button>
+</div>
